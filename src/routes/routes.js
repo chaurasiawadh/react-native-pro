@@ -43,8 +43,10 @@ import {TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 const Stack = createNativeStackNavigator();
+const urlCommon =
+  'https://raw.githubusercontent.com/chaurasiawadh/react-native-pro/main/src/views/';
 
-const headerOption = headerTitle => {
+const headerOption = (navigation, headerTitle, path) => {
   return {
     headerTitle,
     headerStyle: {
@@ -54,19 +56,32 @@ const headerOption = headerTitle => {
     headerTitleStyle: {
       fontWeight: 'bold',
     },
-    headerRight: () => (
-      <TouchableOpacity
-        style={{padding: 20, paddingRight: 16}}
-        // onPress={() =>
-        //   navigation.navigate('Git', {
-        //     url: `${urlCommon}${path}`,
-        //     title: `${headerTitle} Code`,
-        //   })
-        // }
-      >
-        <Icon name="code" size={25} color="white" />
-      </TouchableOpacity>
-    ),
+    headerRight: () => {
+      if (headerTitle === 'React Native') {
+        return <></>;
+      }
+      if (headerTitle === 'Code') {
+        return <></>;
+        // return (
+        //   <TouchableOpacity style={{padding: 16}}>
+        //     <Icon name="copy" size={25} color="white" />
+        //   </TouchableOpacity>
+        // );
+      }
+
+      return (
+        <TouchableOpacity
+          style={{padding: 16}}
+          onPress={() =>
+            navigation.navigate(RoutesName.Git, {
+              url: `${urlCommon}${path}`,
+              title: `${headerTitle} Code`,
+            })
+          }>
+          <Icon name="code" size={25} color="white" />
+        </TouchableOpacity>
+      );
+    },
   };
 };
 
@@ -76,172 +91,288 @@ const MyRoutes = () => {
       <Stack.Screen
         name={RoutesName.Home}
         component={Home}
-        options={headerOption('React Native')}
+        options={({navigation}) =>
+          headerOption(navigation, 'React Native', 'charts/charts.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.Charts}
         component={Charts}
-        options={headerOption('Charts')}
+        options={({navigation}) =>
+          headerOption(navigation, 'Charts', 'charts/charts.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.BarCharts}
         component={BarCharts}
-        options={headerOption('Bar Charts')}
+        options={({navigation}) =>
+          headerOption(navigation, 'Bar Charts', 'charts/bar/bar.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.BasicBar}
         component={BasicBar}
-        options={headerOption('Basic Bar')}
+        options={({navigation}) =>
+          headerOption(navigation, 'Basic Bar', 'charts/bar/basicBar.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.BasicColumn}
         component={BasicColumn}
-        options={headerOption('Basic Column')}
+        options={({navigation}) =>
+          headerOption(navigation, 'Basic Column', 'charts/bar/basicColumn.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.ColumnRange}
         component={ColumnRange}
-        options={headerOption('Column Range')}
+        options={({navigation}) =>
+          headerOption(navigation, 'Column Range', 'charts/bar/columnRange.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.ColumnWithDrillDown}
         component={ColumnWithDrillDown}
-        options={headerOption('Column With Drill Down')}
+        options={({navigation}) =>
+          headerOption(
+            navigation,
+            'Column With Drill Down',
+            'charts/bar/drillDownColumn.js',
+          )
+        }
       />
       <Stack.Screen
         name={RoutesName.HtmlTable}
         component={HtmlTable}
-        options={headerOption('Html Table')}
+        options={({navigation}) =>
+          headerOption(navigation, 'Html Table', 'charts/bar/htmlTable.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.NegativeColumn}
         component={NegativeColumn}
-        options={headerOption('Negative Column')}
+        options={({navigation}) =>
+          headerOption(
+            navigation,
+            'Negative Column',
+            'charts/bar/negativeColumn.js',
+          )
+        }
       />
       <Stack.Screen
         name={RoutesName.NegativeStack}
         component={NegativeStack}
-        options={headerOption('NegativeStack')}
+        options={({navigation}) =>
+          headerOption(
+            navigation,
+            'Negative Stack',
+            'charts/bar/negativeStack.js',
+          )
+        }
       />
       <Stack.Screen
         name={RoutesName.Stacked}
         component={Stacked}
-        options={headerOption('Stacked')}
+        options={({navigation}) =>
+          headerOption(navigation, 'Stacked', 'charts/bar/stacked.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.StackedBar}
         component={StackedBar}
-        options={headerOption('StackedBar')}
+        options={({navigation}) =>
+          headerOption(navigation, 'Stacked Bar', 'charts/bar/stackedBar.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.StackedColumn}
         component={StackedColumn}
-        options={headerOption('Stacked Column')}
+        options={({navigation}) =>
+          headerOption(
+            navigation,
+            'StackedColumn',
+            'charts/bar/stackedColumn.js',
+          )
+        }
       />
       <Stack.Screen
         name={RoutesName.PieCharts}
         component={PieCharts}
-        options={headerOption('Pie Charts')}
+        options={({navigation}) =>
+          headerOption(navigation, 'Pie Charts', 'charts/pie/pie.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.DonutChart}
         component={DonutChart}
-        options={headerOption('Donut Chart')}
+        options={({navigation}) =>
+          headerOption(navigation, 'DonutChart', 'charts/pie/donutChart.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.GradientFill}
         component={GradientFill}
-        options={headerOption('Gradient Fill')}
+        options={({navigation}) =>
+          headerOption(navigation, '', 'charts/pie/gradientFill.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.Legend}
         component={Legend}
-        options={headerOption('Legend')}
+        options={({navigation}) =>
+          headerOption(navigation, 'Legend', 'charts/pie/legend.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.MonoChromeFill}
         component={MonoChromeFill}
-        options={headerOption('MonoChrome Fill')}
+        options={({navigation}) =>
+          headerOption(
+            navigation,
+            'MonoChrome Fill',
+            'charts/pie/monoChromeFill.js',
+          )
+        }
       />
       <Stack.Screen
         name={RoutesName.PieChart}
         component={PieChart}
-        options={headerOption('Pie Chart')}
+        options={({navigation}) =>
+          headerOption(navigation, 'Pie Chart', 'charts/pie/pieChart.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.SemiCircleDonut}
         component={SemiCircleDonut}
-        options={headerOption('SemiCircle Donut')}
+        options={({navigation}) =>
+          headerOption(
+            navigation,
+            'SemiCircle Donut',
+            'charts/pie/semiCircleDonut.js',
+          )
+        }
       />
       <Stack.Screen
         name={RoutesName.VariableRadiusPie}
         component={VariableRadiusPie}
-        options={headerOption('Variable Radius Pie')}
+        options={({navigation}) =>
+          headerOption(
+            navigation,
+            'Variable Radius Pie',
+            'charts/pie/variableRadiusPie.js',
+          )
+        }
       />
       <Stack.Screen
         name={RoutesName.StockCharts}
         component={StockCharts}
-        options={headerOption('Stock Charts')}
+        options={({navigation}) =>
+          headerOption(navigation, 'Stock Charts', 'charts/stock/stock.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.CandleStick}
         component={CandleStick}
-        options={headerOption('Candle Stick')}
+        options={({navigation}) =>
+          headerOption(navigation, 'CandleStick', 'charts/stock/candleStick.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.Column}
         component={Column}
-        options={headerOption('Column')}
+        options={({navigation}) =>
+          headerOption(navigation, 'Column', 'charts/stock/column.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.CompareMultipleSeries}
         component={CompareMultipleSeries}
-        options={headerOption('Compare Multiple Series')}
+        options={({navigation}) =>
+          headerOption(
+            navigation,
+            'Compare Multiple Series',
+            'charts/stock/compareMultipleSeries.js',
+          )
+        }
       />
       <Stack.Screen
         name={RoutesName.FlagsMarkingEvents}
         component={FlagsMarkingEvents}
-        options={headerOption('Flags Marking Events')}
+        options={({navigation}) =>
+          headerOption(
+            navigation,
+            'Flags Marking Events',
+            'charts/stock/flagsMarkingEvents.js',
+          )
+        }
       />
       <Stack.Screen
         name={RoutesName.StockGUI}
         component={StockGUI}
-        options={headerOption('StockGUI')}
+        options={({navigation}) =>
+          headerOption(navigation, 'Stock GUI', 'charts/stock/gui.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.PointMarkers}
         component={PointMarkers}
-        options={headerOption('Point Markers')}
+        options={({navigation}) =>
+          headerOption(
+            navigation,
+            'PointMarkers',
+            'charts/stock/pointMarkers.js',
+          )
+        }
       />
       <Stack.Screen
         name={RoutesName.SingleLineSeries}
         component={SingleLineSeries}
-        options={headerOption('Single Line Series')}
+        options={({navigation}) =>
+          headerOption(
+            navigation,
+            'Single Line Series',
+            'charts/stock/singleLineSeries.js',
+          )
+        }
       />
       <Stack.Screen
         name={RoutesName.Spline}
         component={Spline}
-        options={headerOption('Spline')}
+        options={({navigation}) =>
+          headerOption(navigation, 'Spline', 'charts/stock/spline.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.StepLine}
         component={StepLine}
-        options={headerOption('StepLine')}
+        options={({navigation}) =>
+          headerOption(navigation, 'StepLine', 'charts/stock/stepLine.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.StockArea}
         component={StockArea}
-        options={headerOption('Stock Area')}
+        options={({navigation}) =>
+          headerOption(navigation, 'Stock Area', 'charts/stock/stockArea.js')
+        }
       />
       <Stack.Screen
         name={RoutesName.StockAreaRange}
         component={StockAreaRange}
-        options={headerOption('Stock Area Range')}
+        options={({navigation}) =>
+          headerOption(
+            navigation,
+            'Stock Area Range',
+            'charts/stock/stockAreaRange.js',
+          )
+        }
       />
       <Stack.Screen
         name={RoutesName.Git}
         component={Git}
-        options={headerOption('Code')}
+        options={({navigation}) =>
+          headerOption(navigation, 'Code', 'charts/charts.js')
+        }
       />
     </Stack.Navigator>
   );

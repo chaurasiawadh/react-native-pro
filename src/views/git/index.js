@@ -1,24 +1,10 @@
-import React, {useEffect} from 'react';
-import {WebView} from 'react-native-webview';
-import {colors} from '../../assets';
+import React from 'react';
+import WebView from 'react-native-webview';
 
-export const Git = ({navigation}) => {
-  const navigationOptions = () => ({
-    headerTitle: navigation.state.params.title,
-    headerStyle: {
-      backgroundColor: colors.primary,
-      elevation: 0,
-    },
-    headerTintColor: '#fff',
-  });
-
-  useEffect(() => {
-    navigationOptions();
-  }, []);
-
+export const Git = ({route}) => {
   return (
     <WebView
-      source={{uri: navigation.state.params.url}}
+      source={{uri: route.params?.url}}
       style={{flex: 1}}
       scalesPageToFit={false}
     />

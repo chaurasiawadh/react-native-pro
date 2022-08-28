@@ -18,21 +18,21 @@ export const Charts = ({navigation}) => {
         style={styles.button}
         activeOpacity={0.7}
         onPress={() => goPage(RoutesName.BarCharts)}>
-        <Icon name="code" size={24} color={colors.white} />
+        <Icon name="chart-bar" size={24} color={colors.white} />
         <Text style={styles.txt}>Bar Charts</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button}
         activeOpacity={0.7}
         onPress={() => goPage(RoutesName.PieCharts)}>
-        <Icon name="code" size={24} color={colors.white} />
+        <Icon name="chart-pie" size={24} color={colors.white} />
         <Text style={styles.txt}>Pie Charts</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.button}
         activeOpacity={0.7}
         onPress={() => goPage(RoutesName.StockCharts)}>
-        <Icon name="code" size={24} color={colors.white} />
+        <Icon name="chart-line" size={24} color={colors.white} />
         <Text style={styles.txt}>Stock Charts</Text>
       </TouchableOpacity>
     </View>

@@ -50,6 +50,7 @@ export const BarCharts = ({navigation}) => {
         <View style={styles.buttons}>
           {BAR_CHARTS.map(({name, icon, route, type}) => (
             <TouchableOpacity
+              key={name}
               style={styles.button}
               activeOpacity={0.7}
               onPress={() => goPage(route)}>
