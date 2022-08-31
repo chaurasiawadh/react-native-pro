@@ -50,6 +50,7 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     marginHorizontal: 24,
     justifyContent: 'center',
+    alignItems: 'center',
     marginTop: 20,
   },
   button: {
@@ -68,7 +69,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: 'bold',
     color: colors.white,
-    marginTop: 4,
-    marginLeft: 4,
+    marginLeft: 12,
   },
 });

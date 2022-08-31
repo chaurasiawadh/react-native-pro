@@ -1,5 +1,7 @@
 import * as React from 'react';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import MatIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Clipboard from '@react-native-community/clipboard';
 
 import {
   BarCharts,
@@ -36,9 +38,7 @@ import {
   StockArea,
   StockAreaRange,
   Images,
-  Default,
   FlatLists,
-  Pickers,
   Progress,
   Scroll,
   SectionLists,
@@ -47,14 +47,18 @@ import {
   Switches,
   Texts,
   Web,
+  Default,
+  LineCharts,
+  AreaCharts,
+  DonutCharts,
+  Icons,
 } from '../views';
 import {RoutesName} from './constant';
 import {colors} from '../assets';
 import {Git} from '../views/git';
-import {TouchableOpacity} from 'react-native';
+import {TouchableOpacity, Alert} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {HomeView} from '../views/home/homeView';
-import ScrollOpacity from '../views/defaults/scrollOpacity';
 
 const Stack = createNativeStackNavigator();
 const urlCommon =
@@ -74,13 +78,20 @@ const headerOption = (navigation, headerTitle, path) => {
       if (headerTitle === 'React Native') {
         return <></>;
       }
+
       if (headerTitle === 'Code') {
-        return <></>;
-        // return (
-        //   <TouchableOpacity style={{padding: 16}}>
-        //     <Icon name="copy" size={25} color="white" />
-        //   </TouchableOpacity>
-        // );
+        const copyToClipboard = url => {
+          Clipboard.setString(url);
+          Alert.alert('URL copied', 'Visit to browser for code');
+        };
+
+        return (
+          <TouchableOpacity
+            style={{padding: 20, paddingRight: 16}}
+            onPress={() => copyToClipboard(path.params.url)}>
+            <MatIcon name="content-copy" size={25} color="white" />
+          </TouchableOpacity>
+        );
       }
 
       return (
@@ -110,10 +121,17 @@ const MyRoutes = () => {
         }
       />
       <Stack.Screen
+        name={RoutesName.Git}
+        component={Git}
+        options={({navigation, route}) =>
+          headerOption(navigation, 'Code', route)
+        }
+      />
+      <Stack.Screen
         name={RoutesName.HomeView}
         component={HomeView}
         options={({navigation}) =>
-          headerOption(navigation, 'HomeView', 'home/homeView.js')
+          headerOption(navigation, 'Home', 'home/homeView.js')
         }
       />
       <Stack.Screen
@@ -389,109 +407,107 @@ const MyRoutes = () => {
         }
       />
       <Stack.Screen
-        name={RoutesName.Git}
-        component={Git}
-        options={({navigation}) =>
-          headerOption(navigation, 'Code', 'charts/charts.js')
-        }
-      />
-      <Stack.Screen
         name={RoutesName.Default}
         component={Default}
         options={({navigation}) =>
-          headerOption(navigation, 'Default', 'default/default.js')
+          headerOption(navigation, 'Default', 'defaults/default.js')
         }
       />
       <Stack.Screen
         name={RoutesName.FlatLists}
         component={FlatLists}
         options={({navigation}) =>
-          headerOption(navigation, 'FlatLists', 'default/flatList.js')
+          headerOption(navigation, 'FlatLists', 'defaults/flatList.js')
         }
       />
       <Stack.Screen
         name={RoutesName.Images}
         component={Images}
         options={({navigation}) =>
-          headerOption(navigation, 'Images', 'default/image.js')
-        }
-      />
-      <Stack.Screen
-        name={RoutesName.Pickers}
-        component={Pickers}
-        options={({navigation}) =>
-          headerOption(navigation, 'Pickers', 'default/picker.js')
+          headerOption(navigation, 'Images', 'defaults/image.js')
         }
       />
       <Stack.Screen
         name={RoutesName.Progress}
         component={Progress}
         options={({navigation}) =>
-          headerOption(navigation, 'Progress', 'default/progress.js')
+          headerOption(navigation, 'Progress', 'defaults/progress.js')
         }
       />
       <Stack.Screen
         name={RoutesName.Scroll}
         component={Scroll}
         options={({navigation}) =>
-          headerOption(navigation, 'Scroll', 'default/scroll.js')
+          headerOption(navigation, 'Scroll', 'defaults/scroll.js')
         }
       />
-      {/* <Stack.Screen
-        name={RoutesName.ScrollOpacity}
-        component={ScrollOpacity}
-        options={({navigation}) =>
-          headerOption(navigation, 'ScrollOpacity', 'default/scrollOpacity.js')
-        }
-      /> */}
       <Stack.Screen
         name={RoutesName.SectionLists}
         component={SectionLists}
         options={({navigation}) =>
-          headerOption(navigation, 'SectionLists', 'default/sectionList.js')
+          headerOption(navigation, 'SectionLists', 'defaults/sectionList.js')
         }
       />
       <Stack.Screen
         name={RoutesName.Shares}
         component={Shares}
         options={({navigation}) =>
-          headerOption(navigation, 'Shares', 'default/share.js')
+          headerOption(navigation, 'Shares', 'defaults/share.js')
         }
       />
-      {/* <Stack.Screen
-        name={RoutesName.StatusBars}
-        component={StatusBars}
-        options={({navigation}) =>
-          headerOption(navigation, 'StatusBars', 'default/statusBar.js')
-        }
-      /> */}
       <Stack.Screen
         name={RoutesName.Swipe}
         component={Swipe}
         options={({navigation}) =>
-          headerOption(navigation, 'Swipe', 'default/swipe.js')
+          headerOption(navigation, 'Swipe', 'defaults/swipe.js')
         }
       />
       <Stack.Screen
         name={RoutesName.Switches}
         component={Switches}
         options={({navigation}) =>
-          headerOption(navigation, 'Switches', 'default/switch.js')
+          headerOption(navigation, 'Switches', 'defaults/switch.js')
         }
       />
       <Stack.Screen
         name={RoutesName.Texts}
         component={Texts}
         options={({navigation}) =>
-          headerOption(navigation, 'Texts', 'default/text.js')
+          headerOption(navigation, 'Texts', 'defaults/text.js')
         }
       />
       <Stack.Screen
         name={RoutesName.Web}
         component={Web}
         options={({navigation}) =>
-          headerOption(navigation, 'Web', 'default/web.js')
+          headerOption(navigation, 'Web', 'defaults/web.js')
         }
+      />
+      <Stack.Screen
+        name={RoutesName.LineCharts}
+        component={LineCharts}
+        options={({navigation}) =>
+          headerOption(navigation, 'Line Charts', 'charts/line.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.AreaCharts}
+        component={AreaCharts}
+        options={({navigation}) =>
+          headerOption(navigation, 'Area Charts', 'charts/area.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.DonutCharts}
+        component={DonutCharts}
+        options={({navigation}) =>
+          headerOption(navigation, 'DonutCharts', 'charts/donut.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.Icons}
+        component={Icons}
+        options={({navigation}) => headerOption(navigation, 'Icons', 'icon.js')}
       />
     </Stack.Navigator>
   );

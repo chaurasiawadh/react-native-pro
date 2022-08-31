@@ -28,6 +28,13 @@ export const HomeView = ({navigation}) => {
         <Icon name="book-reader" size={24} color={colors.white} />
         <Text style={styles.txt}>Default Component</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        activeOpacity={0.7}
+        onPress={() => goPage(RoutesName.Icons)}>
+        <Icon name="info" size={24} color={colors.white} />
+        <Text style={styles.txt}>Icons</Text>
+      </TouchableOpacity>
     </View>
   );
 };

@@ -1,5 +1,4 @@
 import React, {useCallback} from 'react';
-import {RoutesName} from '../../routes/constant';
 import {
   StyleSheet,
   Text,
@@ -14,10 +13,10 @@ import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 
-import {colors} from '../../assets';
-import {CHARTS} from '.';
+import {colors} from '../../../assets';
+import {AREA_CHART} from '..';
 
-export const Charts = ({navigation}) => {
+export const AreaCharts = ({navigation}) => {
   const goPage = useCallback(
     name => {
       navigation.navigate(name);
@@ -48,7 +47,7 @@ export const Charts = ({navigation}) => {
     <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.buttons}>
-          {CHARTS.map(({name, icon, route, type}) => (
+          {AREA_CHART.map(({name, icon, route, type}) => (
             <TouchableOpacity
               key={name}
               style={styles.button}
@@ -72,8 +71,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.purpleLighter,
   },
   buttons: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    flexDirection: 'column',
     marginHorizontal: 24,
     justifyContent: 'center',
     marginTop: 20,
@@ -82,7 +80,7 @@ const styles = StyleSheet.create({
     height: 100,
     backgroundColor: colors.primary,
     minWidth: 140,
-    width: '35%',
+    width: 200,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 8,

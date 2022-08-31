@@ -10,45 +10,24 @@ export const Switches = () => {
   const toggleSwitch = value => {
     setSwitchValue(value);
   };
-  const toggleSwitchs = value => {
+  const toggleSwitches = value => {
     setSwitchCheck(value);
   };
 
   return (
-    <View
-      style={{
-        justifyContent: 'center',
-        alignContent: 'center',
-        alignItems: 'center',
-      }}>
-      <Text
-        style={{
-          fontSize: 22,
-          fontWeight: 'bold',
-          marginTop: 10,
-          color: '#000',
-        }}>
-        Default Switch
-      </Text>
+    <View style={styles.container}>
+      <Text style={styles.text1}>Default Switch</Text>
       <Switch
-        style={{marginTop: 30}}
-        onValueChange={toggleSwitchs}
+        style={styles.switchMargin}
+        onValueChange={toggleSwitches}
         value={switchCheck}
       />
-      <Text style={{fontSize: 16}}>{switchCheck ? 'ON' : 'OFF'}</Text>
+      <Text style={styles.fontSize}>{switchCheck ? 'ON' : 'OFF'}</Text>
 
-      <Text
-        style={{
-          fontSize: 22,
-          fontWeight: 'bold',
-          marginTop: 10,
-          color: '#000',
-        }}>
-        TintColor Switch
-      </Text>
+      <Text style={styles.text2}>TintColor Switch</Text>
 
       <Switch
-        style={{marginTop: 30}}
+        style={styles.switchTop}
         onValueChange={toggleSwitch}
         value={switchValue}
         trackColor={{true: 'yellow', false: 'grey'}}
@@ -56,40 +35,24 @@ export const Switches = () => {
         thumbTintColor="blue"
         onTintColor="black"
       />
-      <Text style={{fontSize: 16}}>
+      <Text style={styles.textFont}>
         {switchValue ? 'Switch is ON' : 'Switch is OFF'}
       </Text>
 
-      <Text
-        style={{
-          fontSize: 22,
-          fontWeight: 'bold',
-          marginTop: 10,
-          color: '#000',
-        }}>
-        OFF Condition Switch
-      </Text>
+      <Text style={styles.text3}>OFF Condition Switch</Text>
 
       <Switch
-        onValueChange={value => setColorFalseSwitchIsOn(value)}
+        onValueChange={setColorFalseSwitchIsOn}
         onTintColor="blue"
-        style={{marginBottom: 10}}
+        style={styles.switchBottom}
         thumbTintColor="#3b3b3b"
         tintColor="gray"
         value={colorFalseSwitchIsOn}
       />
 
-      <Text
-        style={{
-          fontSize: 22,
-          fontWeight: 'bold',
-          marginTop: 10,
-          color: '#000',
-        }}>
-        ON Condition Switch
-      </Text>
+      <Text style={styles.text4}>ON Condition Switch</Text>
       <Switch
-        onValueChange={value => setColorTrueSwitchIsOn(value)}
+        onValueChange={setColorTrueSwitchIsOn}
         onTintColor="#00ff00"
         thumbTintColor="#0000ff"
         tintColor="#ff0000"
@@ -102,8 +65,41 @@ export const Switches = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     justifyContent: 'center',
+    alignContent: 'center',
     alignItems: 'center',
+  },
+  text1: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginTop: 10,
+    color: '#000',
+  },
+  text2: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginTop: 10,
+    color: '#000',
+  },
+  text3: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginTop: 10,
+    color: '#000',
+  },
+  text4: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    marginTop: 10,
+    color: '#000',
+  },
+  switchTop: {
+    marginTop: 30,
+  },
+  textFont: {
+    fontSize: 16,
+  },
+  switchBottom: {
+    marginBottom: 10,
   },
 });

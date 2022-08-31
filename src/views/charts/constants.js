@@ -95,36 +95,6 @@ export const STOCKS_CHARTS = [
     icon: 'dotchart',
   },
   {
-    name: 'Single Line Series',
-    route: RoutesName.SingleLineSeries,
-    type: 'MaterialCommunityIcons',
-    icon: 'chart-line-variant',
-  },
-  {
-    name: 'Spline',
-    route: RoutesName.Spline,
-    type: 'MaterialCommunityIcons',
-    icon: 'chart-bell-curve',
-  },
-  {
-    name: 'Step Line',
-    route: RoutesName.StepLine,
-    type: 'AntDesign',
-    icon: 'linechart',
-  },
-  {
-    name: 'Stock Area',
-    route: RoutesName.StockArea,
-    type: '',
-    icon: 'chart-area',
-  },
-  {
-    name: 'Stock Area Range',
-    route: RoutesName.StockAreaRange,
-    type: 'MaterialCommunityIcons',
-    icon: 'chart-line-stacked',
-  },
-  {
     name: 'Stock GUI',
     route: RoutesName.StockGUI,
     type: 'MaterialCommunityIcons',
@@ -133,12 +103,6 @@ export const STOCKS_CHARTS = [
 ];
 
 export const PIE_CHARTS = [
-  {
-    name: 'Donut Chart',
-    route: RoutesName.DonutChart,
-    type: 'MaterialCommunityIcons',
-    icon: 'chart-donut',
-  },
   {
     name: 'Gradient Fill',
     route: RoutesName.GradientFill,
@@ -164,15 +128,99 @@ export const PIE_CHARTS = [
     icon: 'pie-chart-1',
   },
   {
-    name: 'Semi Circle Donut',
-    route: RoutesName.SemiCircleDonut,
-    type: 'Fontisto',
-    icon: 'pie-chart-2',
-  },
-  {
     name: 'Variable Radius Pie',
     route: RoutesName.VariableRadiusPie,
     type: 'MaterialCommunityIcons',
     icon: 'chart-donut-variant',
+  },
+];
+
+export const CHARTS = [
+  {
+    name: 'Area Charts',
+    route: RoutesName.AreaCharts,
+    type: '',
+    icon: 'chart-area',
+  },
+  {
+    name: 'Bar Charts',
+    route: RoutesName.BarCharts,
+    type: 'MaterialCommunityIcons',
+    icon: 'chart-bar',
+  },
+  {
+    name: 'Donut Charts',
+    route: RoutesName.DonutCharts,
+    type: 'MaterialCommunityIcons',
+    icon: 'chart-donut',
+  },
+  {
+    name: 'Line Charts',
+    route: RoutesName.LineCharts,
+    type: 'MaterialCommunityIcons',
+    icon: 'chart-timeline-variant-shimmer',
+  },
+  {
+    name: 'Pie Charts',
+    route: RoutesName.PieCharts,
+    type: 'MaterialCommunityIcons',
+    icon: 'chart-pie',
+  },
+  {
+    name: 'Stock Charts',
+    route: RoutesName.StockCharts,
+    type: 'FontAwesome5',
+    icon: 'chart-line',
+  },
+];
+
+export const AREA_CHART = [
+  {
+    name: 'Stock Area',
+    route: RoutesName.StockArea,
+    type: '',
+    icon: 'chart-area',
+  },
+  {
+    name: 'Stock Area Range',
+    route: RoutesName.StockAreaRange,
+    type: 'MaterialCommunityIcons',
+    icon: 'chart-line-stacked',
+  },
+];
+
+export const LINE_CHART = [
+  {
+    name: 'Single Line Series',
+    route: RoutesName.SingleLineSeries,
+    type: 'MaterialCommunityIcons',
+    icon: 'chart-line-variant',
+  },
+  {
+    name: 'Spline',
+    route: RoutesName.Spline,
+    type: 'MaterialCommunityIcons',
+    icon: 'chart-bell-curve',
+  },
+  {
+    name: 'Step Line',
+    route: RoutesName.StepLine,
+    type: 'AntDesign',
+    icon: 'linechart',
+  },
+];
+
+export const DONUT_CHARTS = [
+  {
+    name: 'Donut Chart',
+    route: RoutesName.DonutChart,
+    type: 'MaterialCommunityIcons',
+    icon: 'chart-donut',
+  },
+  {
+    name: 'Semi Circle Donut',
+    route: RoutesName.SemiCircleDonut,
+    type: 'Fontisto',
+    icon: 'pie-chart-2',
   },
 ];
