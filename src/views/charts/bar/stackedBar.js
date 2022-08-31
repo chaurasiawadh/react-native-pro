@@ -30,11 +30,11 @@ export const StackedBar = () => {
         <script src="https://code.highcharts.com/highcharts.js"></script>
         <script src="https://code.highcharts.com/modules/export-data.js"></script>
         <script src="https://code.highcharts.com/modules/accessibility.js"></script>
-        
+
         <figure class="highcharts-figure">
             <div id="container"></div>
         </figure>
-        
+
         <style>
         * {
           margin: 0;
@@ -99,7 +99,7 @@ export const StackedBar = () => {
             data: [5, 15, 8, 5, 8]
         }]
     });
-    
+
       </script>
     </html>
     `,

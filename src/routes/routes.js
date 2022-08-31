@@ -35,12 +35,26 @@ import {
   StepLine,
   StockArea,
   StockAreaRange,
+  Images,
+  Default,
+  FlatLists,
+  Pickers,
+  Progress,
+  Scroll,
+  SectionLists,
+  Shares,
+  Swipe,
+  Switches,
+  Texts,
+  Web,
 } from '../views';
 import {RoutesName} from './constant';
 import {colors} from '../assets';
 import {Git} from '../views/git';
 import {TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {HomeView} from '../views/home/homeView';
+import ScrollOpacity from '../views/defaults/scrollOpacity';
 
 const Stack = createNativeStackNavigator();
 const urlCommon =
@@ -93,6 +107,13 @@ const MyRoutes = () => {
         component={Home}
         options={({navigation}) =>
           headerOption(navigation, 'React Native', 'charts/charts.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.HomeView}
+        component={HomeView}
+        options={({navigation}) =>
+          headerOption(navigation, 'HomeView', 'home/homeView.js')
         }
       />
       <Stack.Screen
@@ -372,6 +393,104 @@ const MyRoutes = () => {
         component={Git}
         options={({navigation}) =>
           headerOption(navigation, 'Code', 'charts/charts.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.Default}
+        component={Default}
+        options={({navigation}) =>
+          headerOption(navigation, 'Default', 'default/default.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.FlatLists}
+        component={FlatLists}
+        options={({navigation}) =>
+          headerOption(navigation, 'FlatLists', 'default/flatList.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.Images}
+        component={Images}
+        options={({navigation}) =>
+          headerOption(navigation, 'Images', 'default/image.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.Pickers}
+        component={Pickers}
+        options={({navigation}) =>
+          headerOption(navigation, 'Pickers', 'default/picker.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.Progress}
+        component={Progress}
+        options={({navigation}) =>
+          headerOption(navigation, 'Progress', 'default/progress.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.Scroll}
+        component={Scroll}
+        options={({navigation}) =>
+          headerOption(navigation, 'Scroll', 'default/scroll.js')
+        }
+      />
+      {/* <Stack.Screen
+        name={RoutesName.ScrollOpacity}
+        component={ScrollOpacity}
+        options={({navigation}) =>
+          headerOption(navigation, 'ScrollOpacity', 'default/scrollOpacity.js')
+        }
+      /> */}
+      <Stack.Screen
+        name={RoutesName.SectionLists}
+        component={SectionLists}
+        options={({navigation}) =>
+          headerOption(navigation, 'SectionLists', 'default/sectionList.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.Shares}
+        component={Shares}
+        options={({navigation}) =>
+          headerOption(navigation, 'Shares', 'default/share.js')
+        }
+      />
+      {/* <Stack.Screen
+        name={RoutesName.StatusBars}
+        component={StatusBars}
+        options={({navigation}) =>
+          headerOption(navigation, 'StatusBars', 'default/statusBar.js')
+        }
+      /> */}
+      <Stack.Screen
+        name={RoutesName.Swipe}
+        component={Swipe}
+        options={({navigation}) =>
+          headerOption(navigation, 'Swipe', 'default/swipe.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.Switches}
+        component={Switches}
+        options={({navigation}) =>
+          headerOption(navigation, 'Switches', 'default/switch.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.Texts}
+        component={Texts}
+        options={({navigation}) =>
+          headerOption(navigation, 'Texts', 'default/text.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.Web}
+        component={Web}
+        options={({navigation}) =>
+          headerOption(navigation, 'Web', 'default/web.js')
         }
       />
     </Stack.Navigator>

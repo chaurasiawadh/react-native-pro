@@ -25,7 +25,6 @@ export const StockCharts = ({navigation}) => {
   );
 
   const renderIcons = ({icon, type}) => {
-    console.log('icon, type', icon, type);
     switch (type) {
       case 'FontAwesome5':
         return <Icon name={icon} color={colors.white} size={20} />;

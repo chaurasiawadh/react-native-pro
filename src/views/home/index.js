@@ -14,7 +14,7 @@ export const Home = ({navigation}) => {
       <TouchableOpacity
         style={styles.button}
         activeOpacity={0.7}
-        onPress={() => navigation.navigate(RoutesName.Charts)}>
+        onPress={() => navigation.navigate(RoutesName.HomeView)}>
         <Text style={styles.txt}>Get Start</Text>
       </TouchableOpacity>
     </View>
