@@ -487,27 +487,29 @@ const MyRoutes = () => {
         name={RoutesName.LineCharts}
         component={LineCharts}
         options={({navigation}) =>
-          headerOption(navigation, 'Line Charts', 'charts/line.js')
+          headerOption(navigation, 'Line Charts', 'charts/line/index.js')
         }
       />
       <Stack.Screen
         name={RoutesName.AreaCharts}
         component={AreaCharts}
         options={({navigation}) =>
-          headerOption(navigation, 'Area Charts', 'charts/area.js')
+          headerOption(navigation, 'Area Charts', 'charts/area/index.js')
         }
       />
       <Stack.Screen
         name={RoutesName.DonutCharts}
         component={DonutCharts}
         options={({navigation}) =>
-          headerOption(navigation, 'DonutCharts', 'charts/donut.js')
+          headerOption(navigation, 'DonutCharts', 'charts/donut/index.js')
         }
       />
       <Stack.Screen
         name={RoutesName.Icons}
         component={Icons}
-        options={({navigation}) => headerOption(navigation, 'Icons', 'icon.js')}
+        options={({navigation}) =>
+          headerOption(navigation, 'Icons', 'icon/index.js')
+        }
       />
     </Stack.Navigator>
   );
