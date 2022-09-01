@@ -9,6 +9,7 @@ import {
 import WebView from 'react-native-webview';
 
 const {width: chartWidth} = Dimensions.get('window');
+
 export const StyledPie = () => {
   const onMessage = data => {
     Alert.alert('Error', data.nativeEvent.data);

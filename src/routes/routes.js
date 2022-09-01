@@ -304,7 +304,7 @@ const MyRoutes = () => {
         name={RoutesName.StyledPie}
         component={StyledPie}
         options={({navigation}) =>
-          headerOption(navigation, '3D Pie', 'charts/3D/styledPie.js')
+          headerOption(navigation, '3D Pie', 'charts/dimension/styledPie.js')
         }
       />
       <Stack.Screen
