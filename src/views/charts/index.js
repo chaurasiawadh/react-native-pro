@@ -6,3 +6,4 @@ export * from './stock';
 export * from './line';
 export * from './area';
 export * from './donut';
+export * from './dimension';

@@ -3,4 +3,5 @@ export const colors = {
   primary: '#866cff',
   white: '#ffffff',
   purpleLighter: '#EBE7FF',
+  black: '#000',
 };

@@ -1,7 +1,7 @@
 import * as React from 'react';
+import Clipboard from '@react-native-community/clipboard';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import MatIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-import Clipboard from '@react-native-community/clipboard';
 
 import {
   BarCharts,
@@ -52,6 +52,15 @@ import {
   AreaCharts,
   DonutCharts,
   Icons,
+  Fade,
+  Loader,
+  Shadow,
+  Multiple,
+  StyledPie,
+  StyledDonut,
+  D3Charts,
+  StyledArea,
+  StyledColumn,
 } from '../views';
 import {RoutesName} from './constant';
 import {colors} from '../assets';
@@ -292,6 +301,13 @@ const MyRoutes = () => {
         }
       />
       <Stack.Screen
+        name={RoutesName.StyledPie}
+        component={StyledPie}
+        options={({navigation}) =>
+          headerOption(navigation, '3D Pie', 'charts/3D/styledPie.js')
+        }
+      />
+      <Stack.Screen
         name={RoutesName.VariableRadiusPie}
         component={VariableRadiusPie}
         options={({navigation}) =>
@@ -501,7 +517,39 @@ const MyRoutes = () => {
         name={RoutesName.DonutCharts}
         component={DonutCharts}
         options={({navigation}) =>
-          headerOption(navigation, 'DonutCharts', 'charts/donut/index.js')
+          headerOption(navigation, 'DonutCharts', 'charts/donut/donut.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.D3Charts}
+        component={D3Charts}
+        options={({navigation}) =>
+          headerOption(navigation, '3D Chats', 'charts/dimension/3d.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.StyledArea}
+        component={StyledArea}
+        options={({navigation}) =>
+          headerOption(navigation, '3D Area', 'charts/dimension/styledArea.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.StyledColumn}
+        component={StyledColumn}
+        options={({navigation}) =>
+          headerOption(
+            navigation,
+            '3D Column',
+            'charts/dimension/styledColumn.js',
+          )
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.StyledDonut}
+        component={StyledDonut}
+        options={({navigation}) =>
+          headerOption(navigation, '3D Donut', 'charts/dimension/3Donut.js')
         }
       />
       <Stack.Screen
@@ -509,6 +557,34 @@ const MyRoutes = () => {
         component={Icons}
         options={({navigation}) =>
           headerOption(navigation, 'Icons', 'icon/index.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.Fade}
+        component={Fade}
+        options={({navigation}) =>
+          headerOption(navigation, 'Fade', 'defaults/fade.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.Loader}
+        component={Loader}
+        options={({navigation}) =>
+          headerOption(navigation, 'Loader', 'defaults/loader.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.Shadow}
+        component={Shadow}
+        options={({navigation}) =>
+          headerOption(navigation, 'Shadow', 'defaults/shadow.js')
+        }
+      />
+      <Stack.Screen
+        name={RoutesName.Multiple}
+        component={Multiple}
+        options={({navigation}) =>
+          headerOption(navigation, 'Multiple', 'defaults/multiple.js')
         }
       />
     </Stack.Navigator>

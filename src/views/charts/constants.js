@@ -172,6 +172,12 @@ export const CHARTS = [
     type: 'FontAwesome5',
     icon: 'chart-line',
   },
+  {
+    name: '3D Charts',
+    route: RoutesName.D3Charts,
+    type: 'FontAwesome5Brands',
+    icon: 'uncharted',
+  },
 ];
 
 export const AREA_CHART = [
@@ -220,7 +226,33 @@ export const DONUT_CHARTS = [
   {
     name: 'Semi Circle Donut',
     route: RoutesName.SemiCircleDonut,
-    type: 'Fontisto',
-    icon: 'pie-chart-2',
+    type: 'MaterialCommunityIcons',
+    icon: 'circle-half',
+  },
+];
+export const D_CHARTS = [
+  {
+    name: '3D Area',
+    route: RoutesName.StyledArea,
+    type: 'MaterialCommunityIcons',
+    icon: 'chart-areaspline-variant',
+  },
+  {
+    name: '3D Column',
+    route: RoutesName.StyledColumn,
+    type: 'Feather',
+    icon: 'box',
+  },
+  {
+    name: '3D Donut',
+    route: RoutesName.StyledDonut,
+    type: 'MaterialCommunityIcons',
+    icon: 'circle-double',
+  },
+  {
+    name: '3D Pie',
+    route: RoutesName.StyledPie,
+    type: 'MaterialCommunityIcons',
+    icon: 'circle-opacity',
   },
 ];

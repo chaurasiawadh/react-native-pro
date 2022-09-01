@@ -49,4 +49,13 @@ export const RoutesName = {
   AreaCharts: 'AreaCharts',
   DonutCharts: 'DonutCharts',
   Icons: 'Icons',
+  Fade: 'Fade',
+  Loader: 'Loader',
+  Shadow: 'Shadow',
+  Multiple: 'Multiple',
+  StyledPie: 'StyledPie',
+  StyledDonut: 'StyledDonut',
+  D3Charts: 'D3Charts',
+  StyledArea: 'StyledArea',
+  StyledColumn: 'StyledColumn',
 };

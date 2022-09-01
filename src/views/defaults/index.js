@@ -9,3 +9,7 @@ export * from './swipe';
 export * from './switch';
 export * from './text';
 export * from './web';
+export * from './fade';
+export * from './loader';
+export * from './shadow';
+export * from './multiple';

@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react';
 import {
-  Text,
   StyleSheet,
+  Text,
   TouchableOpacity,
   View,
   ScrollView,
@@ -12,16 +12,18 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import AntDesign from 'react-native-vector-icons/AntDesign';
-import {colors} from '../../assets';
-import {DEFAULT_LIST} from './constant';
 
-export const Default = ({navigation}) => {
+import {colors} from '../../../assets';
+import {D_CHARTS} from '..';
+
+export const D3Charts = ({navigation}) => {
   const goPage = useCallback(
     name => {
       navigation.navigate(name);
     },
     [navigation],
   );
+
   const renderIcons = ({icon, type}) => {
     switch (type) {
       case 'FontAwesome5':
@@ -45,7 +47,7 @@ export const Default = ({navigation}) => {
     <View style={styles.container}>
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.buttons}>
-          {DEFAULT_LIST.map(({name, icon, route, type}) => (
+          {D_CHARTS.map(({name, icon, route, type}) => (
             <TouchableOpacity
               key={name}
               style={styles.button}
@@ -69,29 +71,26 @@ const styles = StyleSheet.create({
     backgroundColor: colors.purpleLighter,
   },
   buttons: {
-    flexDirection: 'row',
-    flexWrap: 'wrap',
+    flexDirection: 'column',
     marginHorizontal: 24,
     justifyContent: 'center',
-    alignItems: 'center',
     marginTop: 20,
   },
   button: {
-    height: 60,
+    height: 100,
     backgroundColor: colors.primary,
     minWidth: 140,
-    width: '35%',
+    width: 200,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 8,
     elevation: 2,
     margin: 8,
-    flexDirection: 'row',
   },
   txt: {
     fontSize: 16,
     fontWeight: 'bold',
     color: colors.white,
-    marginLeft: 12,
+    marginTop: 4,
   },
 });

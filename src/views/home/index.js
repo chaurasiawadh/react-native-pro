@@ -10,6 +10,7 @@ const FEATURES = [
   {title: 'Charts', route: RoutesName.Charts},
 ];
 const CHARTS = [
+  {title: '3D Charts', route: RoutesName.D3Charts},
   {title: 'Area Charts', route: RoutesName.AreaCharts},
   {title: 'Bar Charts', route: RoutesName.BarCharts},
   {title: 'Donut Charts', route: RoutesName.DonutCharts},
